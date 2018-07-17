@@ -1,0 +1,15 @@
+﻿<Window x:Class="MathGame.SelectGameTypeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectGameTypeWindow" Height="301" Width="421">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/SelectGameWindow.jpg"/>
+    </Window.Background>
+    <Grid>
+        <ComboBox x:Name="cmbSelectedGame" ItemsSource = "{Binding Path=AvailableGameTypes}"  HorizontalAlignment="Left" Margin="138,204,0,0" VerticalAlignment="Top" Width="120" Height="26" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Button x:Name="cmdSelectGameTypeSubmit" Content="Submit" HorizontalAlignment="Left" Margin="165,235,0,0" VerticalAlignment="Top" Width="75" Click="cmdSelectGameTypeSubmit_Click" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Label Content="Select a game type:" HorizontalAlignment="Left" Margin="20,204,0,0" VerticalAlignment="Top" FontSize="12" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+
+
+    </Grid>
+</Window>

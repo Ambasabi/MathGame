@@ -1,0 +1,21 @@
+﻿<Window x:Class="MathGame.EnterUserDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EnterUserDataWindow" Height="355.175" Width="462">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/EnterUserInfo.JPG"/>
+    </Window.Background>
+    <Grid>
+        <Button x:Name="cmdCloseEnterUserDataWindow" Content="Cancel" HorizontalAlignment="Left" Margin="175,188,0,0" VerticalAlignment="Top" Width="75" Click="cmdCloseEnterUserDataWindow_Click" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+        <Label Content="First and Last Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+        <TextBox x:Name="txtFirstLast" Text="{Binding Path=TheCurrentUser.UserName, Mode=TwoWay}"  HorizontalAlignment="Left" Height="23" Margin="132,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" MaxLength="30" Background="#7FFFFFFF" Foreground="#FF5104F5" BorderThickness="2" BorderBrush="#FF4992DA" FontWeight="Bold"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="93,41,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+        <TextBox x:Name="txtAge" Text="{Binding Path=TheCurrentUser.Age, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="132,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Background="#7FFFFFFF" Foreground="#FF5104F5" BorderThickness="2" BorderBrush="#FF4992DA" FontWeight="Bold"/>
+        <Label Content="Phone:" HorizontalAlignment="Left" Margin="81,72,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+        <TextBox x:Name="txtPhone" Text="{Binding Path=TheCurrentUser.Phone, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="132,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Background="#7FFFFFFF" Foreground="#FF5104F5" BorderThickness="2" BorderBrush="#FF4992DA" FontWeight="Bold"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="86,103,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+        <TextBox x:Name="txtEmail" Text="{Binding Path=TheCurrentUser.Email, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="132,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Background="#7FFFFFFF" Foreground="#FF5104F5" BorderThickness="2" BorderBrush="#FF4992DA" FontWeight="Bold"/>
+        <Button x:Name="cmdSubmitEnterUserData" Content="Submit" HorizontalAlignment="Left" Margin="175,143,0,0" VerticalAlignment="Top" Width="75" Click="cmdSubmitEnterUserData_Click" Background="#7F000000" Foreground="#FFA988F0" BorderBrush="Black"/>
+
+    </Grid>
+</Window>

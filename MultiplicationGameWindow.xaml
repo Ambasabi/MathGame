@@ -1,0 +1,32 @@
+﻿<Window x:Class="MathGame.MultiplicationGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Root="clr-namespace:MathGame"
+        Title="MultiplicationGame" Height="336" Width="594" ResizeMode="NoResize">
+    <Window.Resources>
+        <Root:InverseBoolConverter x:Key="InverseBoolConverter" />
+        <Root:TextConverter x:Key="converter"/>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Images/MultiplicationGame.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Button Content="X" HorizontalAlignment="Left" Margin="539,1,0,0" VerticalAlignment="Top" Width="38" Foreground="#FFFF0606" FontSize="25" Background="Transparent" BorderBrush="#00000000" Height="38" Click="cmdCloseMultiplicationGame"/>
+        <Label x:Name="multiplicandOne" Content="{Binding Path=MultiplicandOne}" HorizontalAlignment="Left" FontSize="22" Margin="313,43,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Label Content="X" HorizontalAlignment="Left" Margin="357,43,0,0" VerticalAlignment="Top" FontSize="22" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black">
+
+        </Label>
+        <Label x:Name="multiplicandTwo" Content="{Binding Path=MultiplicandTwo}" HorizontalAlignment="Left" FontSize="22" Margin="400,43,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="437,43,0,0" VerticalAlignment="Top" FontSize="22" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <TextBox x:Name="product" Height="35" Margin="481,44,0,0" TextWrapping="Wrap" Text="{Binding Path=Product, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="95" PreviewKeyDown="product_KeyDown" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black" FontSize="22"/>
+        <Button Content="Submit" IsEnabled="{Binding Path=IsGameStarted}" HorizontalAlignment="Left" Margin="487,84,0,0" VerticalAlignment="Top" Width="95" Click="cmdSubmitAnswerMultiplication" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Button Content="Start" IsEnabled="{Binding Path=IsGameStarted, Converter={StaticResource InverseBoolConverter}}" HorizontalAlignment="Left" Margin="303,164,0,0" VerticalAlignment="Top" Width="75" Click="cmdStartGameMultiplication" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <Label x:Name="lblTime" Content="{Binding Path=TimeElapsed}" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Background="#7F000000" Foreground="#FF1363F0" BorderBrush="Black"/>
+        <DataGrid ItemsSource="{Binding Path=QuestionResults}" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserSortColumns="False" RowHeaderWidth="0" HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" AutoGenerateColumns="False" Width="160" Opacity="0.50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Question Number" Binding="{Binding Path=QuestionNumber}" />
+                <DataGridTextColumn Header="Result" Binding="{Binding Path=IsCorrect, Converter={StaticResource ResourceKey=converter}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
